@@ -1,0 +1,386 @@
+{
+	"info": {
+		"_postman_id": "755dc2a6-8220-4a3f-89e0-bf60ade0ef76",
+		"name": "PSW",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6880279"
+	},
+	"item": [
+		{
+			"name": "Program",
+			"item": [
+				{
+					"name": "Programs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api-v1/program",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api-v1",
+								"program"
+							],
+							"query": [
+								{
+									"key": "filter[name]",
+									"value": "In",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Programs List by name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api-v1/program/list-filter",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api-v1",
+								"program",
+								"list-filter"
+							],
+							"query": [
+								{
+									"key": "PHPSTORM",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "XDEBUG_SESSION_START",
+									"value": "10211",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Program",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api-v1/program",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api-v1",
+								"program"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Program",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:80/api-v1/program/9",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"api-v1",
+								"program",
+								"9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Subjects",
+			"item": [
+				{
+					"name": "List subjects",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api-v1/subject/list?expand=program",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api-v1",
+								"subject",
+								"list"
+							],
+							"query": [
+								{
+									"key": "expand",
+									"value": "program"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Subscribe",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api-v1/subscribe",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api-v1",
+								"subscribe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Unsubscribe",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Create Subject",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{        \r\n        \"name\": \"POO\",\r\n        \"year\": 1,\r\n        \"semester\": 1,\r\n        \"program_id\": 1\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api-v1/subject",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api-v1",
+								"subject"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create with program",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n            \"name\": \"D2\",\r\n            \"year\": \"1\",\r\n            \"semester\": \"1\",\r\n            \r\n\r\n    \"Program\": {\r\n        \"name\": \"P1\",\r\n        \"degree\": \"B\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api-v1/subject/create-with-program?XDEBUG_SESSION_START=15239",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api-v1",
+								"subject",
+								"create-with-program"
+							],
+							"query": [
+								{
+									"key": "XDEBUG_SESSION_START",
+									"value": "15239"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Students",
+			"item": [
+				{
+					"name": "Students",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8001/api-v1/student?access-token=E1bsUR9jrarvr6u8xOhka7beUOrsythG",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"api-v1",
+								"student"
+							],
+							"query": [
+								{
+									"key": "access-token",
+									"value": "E1bsUR9jrarvr6u8xOhka7beUOrsythG"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Enroll",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api-v1/student/enroll",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api-v1",
+								"student",
+								"enroll"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"neo\",\r\n    \"password\": \"neo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api-v1/auth/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api-v1",
+						"auth",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"f\",\r\n    \"newPassword\": \"fffff\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:80/api/auth/register",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "ruRfVtEIDRcuCw7hPopw8stIjRONCWUp",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "localhost"
+		}
+	]
+}
